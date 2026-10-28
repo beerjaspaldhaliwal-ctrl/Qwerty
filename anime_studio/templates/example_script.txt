@@ -1,0 +1,110 @@
+# ==========================================================
+#  ANIME STUDIO - example episode script
+#  Lines starting with # are comments. Edit freely!
+# ==========================================================
+
+TITLE: Storm Fighters Z
+EPISODE: Episode 1 - The Golden Awakening
+STYLE: hype            # calm | normal | hype
+NEXT: Next time: Zarok's true power!
+
+# ---------- CHARACTERS ----------
+# folder: a folder of images named by expression, e.g.
+#   neutral.png  angry.png  happy.png  shout.png  sad.png  surprised.png  hurt.png
+#   neutral_talk.png (mouth open)  neutral_blink.png (eyes closed)
+#   super_neutral.png  super_angry.png ...  (for a TRANSFORM form named "super")
+# sheet + grid + cells: one character-sheet image cut into panels instead.
+# No art yet? Leave folder/sheet out and a stand-in character is drawn for you.
+
+CHARACTER: Kaito
+  folder: characters/kaito
+  color: #ff7a00
+  aura: gold
+  faces: front          # which way the art looks: front, left or right
+  voice: male
+  height: 3.4
+
+CHARACTER: Zarok
+  folder: characters/zarok
+  color: #7b2cff
+  aura: purple
+  voice: male
+  pitch: 25
+  height: 3.7
+
+CHARACTER: Mira
+  folder: characters/mira
+  color: #2f8cff
+  voice: female
+  pitch: 70
+  height: 3.1
+
+CHARACTER: Voltix
+  kind: creature
+  color: #ffd21f
+  height: 1.6
+
+CHARACTER: Blaze Falcon
+  kind: object          # a battle top: spins in place
+  color: #ff2d2d
+  height: 1.2
+
+CHARACTER: Aqua Serpent
+  kind: object
+  color: #18c8ff
+  height: 1.2
+
+# ---------- LOCATIONS ----------
+LOCATION: Rocky Canyon
+  image: locations/canyon.png
+  ground: 0.22          # how far up the image the ground line is (0-1)
+  time: day
+
+LOCATION: Battle Stadium
+  image: locations/stadium.png
+  time: night
+
+# ---------- SCENES ----------
+SCENE: Rocky Canyon - DAY
+MUSIC: music/tension.mp3
+
+NARRATOR: Far beyond the eastern mountains, a storm is gathering...
+Kaito lands from the sky.
+KAITO: Alright, Zarok! I know you're here. Come out!
+Zarok appears from the right.
+ZAROK (smirk): Hmph. A child dares to challenge me?
+KAITO (angry): I'm not a child. I'm your worst nightmare!
+[POWERUP Kaito]
+MIRA (surprised): Kaito! His power level is rising so fast!
+ZAROK: Impressive... but not enough.
+[DASH Zarok Kaito]
+KAITO (hurt): Agh!
+KAITO (shout): That's it... I won't hold back anymore!
+[TRANSFORM Kaito super]
+[ZOOM Kaito]
+KAITO (angry): This is for everyone you hurt!
+[BEAM Kaito Zarok name="Storm Flash!"]
+ZAROK (surprised): Impossible!
+
+SCENE: Rocky Canyon - SUNSET
+Mira enters from the left.
+MIRA (happy): My turn! Voltix, I choose you!
+[SUMMON Mira Voltix]
+VOLTIX (shout): Volt-volt!
+MIRA: Voltix, thunder beam!
+[BEAM Voltix color=yellow]
+MIRA (happy): Ha! That was amazing!
+
+SCENE: Battle Stadium - NIGHT
+[PLACE Kaito left]
+[PLACE Mira right]
+KAITO (happy): Let's settle this with a top battle! Three, two, one...
+KAITO (shout): Let it rip!
+[ENTER Blaze Falcon centerleft]
+[ENTER Aqua Serpent centerright]
+[SPIN Blaze Falcon 2s]
+[SPIN Aqua Serpent 2s]
+[CLASH Blaze Falcon Aqua Serpent]
+[EXPLOSION]
+MIRA (surprised): No way... it's a draw!
+KAITO (happy): Same time next week?

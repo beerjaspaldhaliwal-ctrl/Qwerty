@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+
+id = "anime_studio"
+version = "1.0.0"
+name = "Anime Studio"
+tagline = "Turn a story script and character art into a 2D anime episode"
+maintainer = "Anime Studio"
+type = "add-on"
+tags = ["Animation", "Sequencer"]
+blender_version_min = "4.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+files = "Read scripts, character and location art, write voices and rendered video"
